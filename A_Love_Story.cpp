@@ -2,6 +2,10 @@
 using namespace std;
 int main(){
     int t;
+    cin>>t;
+    while(t--){
+        string s;
+        int count=0;
         cin>>s;
             if(s[0]!='c') count++;
             if(s[1]!='o') count++;
