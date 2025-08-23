@@ -12,11 +12,11 @@ class Tournament {
     string location;
 public:
     void getTournamentInfo() {
-        cout<<"Enter Tournament Name:";getline(cin>>ws,tournamentName);
-        cout<<"Enter Format:";getline(cin>>ws,format);
-        cout<<"Enter Start Date:";getline(cin>>ws,startDate);
-        cout<<"Enter End Date:";getline(cin>>ws,endDate);
-        cout<<"Enter Location:";getline(cin>>ws,location);
+        cout<<"Enter Tournament Name:";getline(cin,tournamentName);
+        cout<<"Enter Format:";getline(cin,format);
+        cout<<"Enter Start Date:";getline(cin,startDate);
+        cout<<"Enter End Date:";getline(cin,endDate);
+        cout<<"Enter Location:";getline(cin,location);
     }
     void showTournamentDetails() {
         cout<<"Tournament Information\n";
@@ -61,7 +61,7 @@ class Bowler:public Player {
 public:
     Bowler() { nowicket=0; }
     void setdata() {
-        cout<<"Enter bowler name:";getline(cin>>ws,name);
+        cout<<"Enter bowler name:";getline(cin,name);
         cout<<"Enter jersey number:";cin>>jerseyno;
         nowicket=rand()%6;
         runscore=rand()%60;
@@ -83,7 +83,7 @@ class Batsman:public Player {
 public:
     Batsman() {}
     void setdata() {
-        cout<<"Enter batsman name:";getline(cin>>ws,name);
+        cout<<"Enter batsman name:";getline(cin,name);
         cout<<"Enter jersey number:";cin>>jerseyno;
         runscore=rand()%200;
     }
@@ -116,8 +116,8 @@ int main() {
     int choice;
     string teamname1,teamname2;
 
-    cout<<"Enter team 1 name:";getline(cin>>ws,teamname1);
-    cout<<"Enter team 2 name:";getline(cin>>ws,teamname2);
+    cout<<"Enter team 1 name:";getline(cin,teamname1);
+    cout<<"Enter team 2 name:";getline(cin,teamname2);
 
     for(int i=0;i<4;i++) {
         cout<<"Enter 1 for batsman, 0 for bowler:";cin>>choice;
