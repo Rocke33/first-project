@@ -1,20 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 void rocke() {
-    string s;
+    int point=0;
+    int p[10][10]={
+{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+{1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
+{1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
+{1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
+{1, 2, 3, 4, 5, 5, 4, 3, 2, 1},
+{1, 2, 3, 4, 5, 5, 4, 3, 2, 1},
+{1, 2, 3, 4, 4, 4, 4, 3, 2, 1},
+{1, 2, 3, 3, 3, 3, 3, 3, 2, 1},
+{1, 2, 2, 2, 2, 2, 2, 2, 2, 1},
+{1, 1, 1, 1, 1, 1, 1, 1, 1, 1} 
+    };
+         char a[10][10];
     for(int i=0;i<10;i++){
-            cin>>s;
-    }
-    int point =0;
-    for(int j=0;j<10;j++){
-        for(int i=0;i<10;i++){
-        if(s[i]=='X'){
-            if(i==0 || j==0 || i==9 || j==9) point+=1;
-            else if()
-        }
-    }
- }
-    cout<<point<<endl;
+           for(int j=0;j<10;j++){
+              cin>>a[i][j];
+              if(a[i][j]=='X')point+=p[i][j];
+           }
+  }
+  cout<<point<<endl;
 }
 int main() {
     int t;
