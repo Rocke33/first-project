@@ -11,7 +11,6 @@ void rocke() {
     int a= *max_element(v.begin(),v.end())- *min_element(v.begin(),v.end());
     cout<<a*a<<endl;
 }
-
 int main() {
     int t;
     cin >> t;
