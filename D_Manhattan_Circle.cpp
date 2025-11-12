@@ -2,35 +2,21 @@
 using namespace std;
 
 void rocke() {
-int rows,cols,i;cin>>rows>>cols;
-char mat[rows][cols];
-vector<int>hash_vector;
-for(int i=0;i<rows;i++){
-    int hash=0;
-    for(int j=0;j<cols;j++){
-        cin>>mat[i][j];
-        if(mat[i][j]=='#'){
-            hash++;
-        }
+int rows,cols,i,max_hash=0,max_row_index=-1;
+cin>>rows>>cols;
+ vector<string>mat(rows);
+ for(int i=0;i<rows;i++){
+    cin>>mat[i];
+    int cnt=count(mat[i].begin(),mat[i].end(),'#');
+    if(cnt>max_hash){
+        max_row_index=i;
+        max_hash=cnt;
     }
-    hash_vector.push_back(hash);
-}
-int mx=0,index_max=-1;
-for(int i=0;i<rows;i++){
-    if(hash_vector[i]>mx){
-        mx=hash_vector[i];
-        index_max=i;
-    }
-}
-int x=index_max+1;
-int first_hash=-1;
-for(int j=0;j<cols;j++){
-    if(mat[index_max][j]=='#'){
-        first_hash=j;break;
-    }
-}
-int y=first_hash+1+(mx-1)/2;
-cout<<x<<" "<<y<<endl;
+ }
+ int x=max_row_index+1;
+ int first_hash_index=mat[max_row_index].find('#');
+ int y=first_hash_index+1+(max_hash-1)/2;
+ cout<<x<<" "<<y<<endl;
 }
 int main() {
     int t;
