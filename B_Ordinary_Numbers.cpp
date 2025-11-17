@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 void rocke() {
-    int n,i=1;cin>>n;
-    int count=0;
-   while(i<=n){
-       string s=to_string(i);
-       for(int j=0;j<s.size();j++){
-        if(s[j-1]==s[j]) count++;
-       }
-   }
+    int n;cin>>n;
+     int l=to_string(n).length();
+     int count=9*(l-1);
+     string one="";
+     for(int i=0;i<l;i++){
+         one+='1';
+     }
+   int ONE=stoi(one);
+   count = count + (n/ONE);
+   cout<<count<<endl;
 }
-
 int main() {
     int t;
     cin >> t;
