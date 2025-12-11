@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+  
+void rocke() {
+       int a[3];
+       for(int i=0;i<3;i++) cin>>a[i];
+       sort(a,a+3);
+       for(int i=0;i<5;i++){
+         if(a[0]<a[1]) a[0]++;
+         else if(a[1]<a[2]) a[1]++;
+         else a[2]++;
+       }
+       cout<<a[0]*a[1]*a[2]<<endl;
+}
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        rocke();
+    }
+    return 0;
+}
