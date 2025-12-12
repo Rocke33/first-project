@@ -2,18 +2,22 @@
 using namespace std;
 
 void rocke() {
-    int a, b, n; cin >> a >> b >> n;
-    vector<int>v(n);
-    int sum=0;int time=b;
+    long long int a, b, n; cin >> a >> b >> n;
+    vector<long long int>x(n);
     for(int i=0;i<n;i++){
-        cin>>v[i];
+        cin>>x[i];
     }
-    sort(v.rbegin(),v.rend());
-    for(int i=1;i<n;i++){
-        time+=min(v[i],a-b);
-        }
-    
-    cout<<time<<endl;
+    sort(x.begin(),x.end());
+    long long int i=0,s=0,c=b;
+    while(c!=0 && i<n){
+       if(c>1){
+        s=s+c-1;
+        c=1;
+       }
+       c=min(c+x[i],a);
+       c--;i++;
+    }
+    cout<<s+c+i<<endl;
 }
 
 int main() {
