@@ -3,7 +3,8 @@ using namespace std;
 
 void rocke() {
     int a,b,c; cin>>a>>b>>c;
-    if((a+b+c)%2!=0)cout<<"First"<<endl;
+    if(c%2==1)a++;
+    if(a>b)cout<<"First"<<endl;
     else cout<<"Second"<<endl;
 }
 
